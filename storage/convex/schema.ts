@@ -3,6 +3,11 @@ import { v } from "convex/values";
 
 export default defineSchema({
   files: defineTable({ name: v.string(), orgId: v.string()})
-  .index("by_orgId", ["orgId"])
+  .index("by_orgId", ["orgId"]),
+
+  users: defineTable({
+    tokenIdentifier: v.string(),
+    clerkId : v.string(),
+  }).index("by_tokenIdentifier", ["tokenIdentifier"]),
     // .index("by_shouldDelete", ["shouldDelete"]),
 });
