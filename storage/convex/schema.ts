@@ -8,6 +8,11 @@ export default defineSchema({
   users: defineTable({
     tokenIdentifier: v.string(),
     clerkId : v.string(),
+    orgIds: v.array(
+      v.object({
+        orgId: v.string(),
+        // role: roles,
+      })
+    ),
   }).index("by_tokenIdentifier", ["tokenIdentifier"]),
-    // .index("by_shouldDelete", ["shouldDelete"]),
 });
